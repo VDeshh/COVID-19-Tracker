@@ -96,24 +96,32 @@ function App() {
         <div className="app__stats">
           {/* Info Boxes title = Coronavirus cases*/}
           <InfoBox
+            onClick={(e) => setCasesType("cases")}
             title="Coronavirus Cases"
             cases={prettyPrintStat(countryInfo.todayCases)}
-            total={countryInfo.cases}
+            total={prettyPrintStat(countryInfo.cases)}
           ></InfoBox>
           {/* Info Boxes title = Coronavirus recoveries*/}
           <InfoBox
+            onClick={(e) => setCasesType("recovered")}
             title="Recovered"
             cases={prettyPrintStat(countryInfo.todayRecovered)}
-            total={countryInfo.recovered}
+            total={prettyPrintStat(countryInfo.recovered)}
           ></InfoBox>
           {/* Info Boxes */}
           <InfoBox
+            onClick={(e) => setCasesType("deaths")}
             title="Deaths"
             cases={prettyPrintStat(countryInfo.todayDeaths)}
-            total={countryInfo.deaths}
+            total={prettyPrintStat(countryInfo.deaths)}
           ></InfoBox>
         </div>
-        <Map countries={mapCountries} center={mapCenter} zoom={mapZoom} />
+        <Map
+          casesType={casesType}
+          countries={mapCountries}
+          center={mapCenter}
+          zoom={mapZoom}
+        />
       </div>
 
       <Card className="app__right">
