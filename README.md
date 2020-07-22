@@ -1,4 +1,4 @@
-# COVID-19-Tracker <img align="right" alt="CoviDonate" src="./logo.svg" width="150px" height="150px" style="border-radius: 25px;">
+# COVID-19-Tracker <img align="right" alt="CoviDonate" src="./logo.png" width="150px" height="150px" style="border-radius: 25px;">
 
 ## Available Scripts
 
