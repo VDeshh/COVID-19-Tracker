@@ -74,7 +74,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className={"app"}>
       <div className="app__left">
         <div className="app__header">
           <h1>COVID-19 TRACKER</h1>
@@ -96,6 +96,8 @@ function App() {
         <div className="app__stats">
           {/* Info Boxes title = Coronavirus cases*/}
           <InfoBox
+            isRed
+            active={casesType === "cases"}
             onClick={(e) => setCasesType("cases")}
             title="Coronavirus Cases"
             cases={prettyPrintStat(countryInfo.todayCases)}
@@ -103,15 +105,18 @@ function App() {
           ></InfoBox>
           {/* Info Boxes title = Coronavirus recoveries*/}
           <InfoBox
+            active={casesType === "recovered"}
             onClick={(e) => setCasesType("recovered")}
-            title="Recovered"
+            title="Recovered Today"
             cases={prettyPrintStat(countryInfo.todayRecovered)}
             total={prettyPrintStat(countryInfo.recovered)}
           ></InfoBox>
           {/* Info Boxes */}
           <InfoBox
+            isRed
+            active={casesType === "deaths"}
             onClick={(e) => setCasesType("deaths")}
-            title="Deaths"
+            title="Deaths Today"
             cases={prettyPrintStat(countryInfo.todayDeaths)}
             total={prettyPrintStat(countryInfo.deaths)}
           ></InfoBox>
@@ -126,10 +131,12 @@ function App() {
 
       <Card className="app__right">
         <CardContent>
-          <h3>Live Cases by Country</h3>
+          <h3 className="app__rightTableTitle">Live Cases by Country</h3>
           <Table countries={tableData} />
-          <h3>Worldwide new cases</h3>
-          <LineGraph>{/* Graph */}</LineGraph>
+          <h3 className="app__rightGraphTitle">Worldwide new {casesType}</h3>
+          <LineGraph className="app__graph" casesType={casesType}>
+            {/* Graph */}
+          </LineGraph>
         </CardContent>
       </Card>
     </div>
