@@ -3,9 +3,22 @@ import { MenuItem, FormControl, Select } from "@material-ui/core";
 import "./App.css";
 
 function App() {
-  const [countries, setCountries] = useState(["USA", "UK", "India"]);
+  const [countries, setCountries] = useState([]);
 
-  //https://disease.sh/v3/covid-19/countries
+  useEffect(() => {
+    const getCountriesData = async () => {
+      await fetch("https://disease.sh/v3/covid-19/countries")
+        .then((response) => response.json())
+        .then((data) => {
+          const countries = data.map((country) => ({
+            name: country.country, //United States, United Kingdom
+            value: country.countryInfo.iso2, // USA, UK
+          }));
+          setCountries(countries);
+        });
+    };
+    getCountriesData();
+  }, []);
 
   return (
     <div className="App">
@@ -15,7 +28,7 @@ function App() {
           <Select variant="outlined" value="abc">
             {/* Loop thru all countries and shop a drop down */}
             {countries.map((country) => (
-              <MenuItem value={country}>{country}</MenuItem>
+              <MenuItem value={country.value}>{country.name}</MenuItem>
             ))}
             <MenuItem value="worldwide">Worldwide</MenuItem>
             <MenuItem value="worldwide">Option 2</MenuItem>
