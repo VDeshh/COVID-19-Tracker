@@ -1,5 +1,36 @@
 # COVID-19-Tracker <img align="right" alt="CoviDonate" src="./logo.png" width="150px" height="150px" style="border-radius: 25px;">
 
+## About This Project
+
+This project is a web application build for tracking COVID-19 cases, recovery and deaths. It is built using React and Firebase. The data is fetched from research.sh-API.
+
+## License
+
+```
+Copyright (C) 2020 Vishal Desh
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+```
+
+## Developed By
+
+- [Vishal Desh](https://github.com/VDeshh)
+
+## Application Demo
+
+- [Demo Link](https://covid-19-tracker-7c51c.web.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:

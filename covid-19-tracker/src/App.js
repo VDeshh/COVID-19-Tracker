@@ -83,6 +83,9 @@ function App() {
     <div className={"app"}>
       <div className="app__left">
         <div className="app__header">
+          <div>
+            <img alt="logo" src="./logo.png" width="150px" height="150px" />
+          </div>
           <Typing>
             <h1 className="neon">COVID-19 Tracker</h1>
           </Typing>
