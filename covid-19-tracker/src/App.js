@@ -13,6 +13,7 @@ import Table from "./Table";
 import { sortData, prettyPrintStat } from "./util";
 import LineGraph from "./LineGraph";
 import "leaflet/dist/leaflet.css";
+import Typing from "react-typing-animation";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -77,7 +78,9 @@ function App() {
     <div className={"app"}>
       <div className="app__left">
         <div className="app__header">
-          <h1>COVID-19 TRACKER</h1>
+          <Typing>
+            <h1 className="neon">COVID-19 Tracker</h1>
+          </Typing>
           <FormControl className="app__dropdown">
             <Select
               variant="outlined"

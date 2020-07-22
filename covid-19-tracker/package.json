@@ -13,7 +13,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-leaflet": "^2.7.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-typing-animation": "^1.6.2"
   },
   "scripts": {
     "start": "react-scripts start",

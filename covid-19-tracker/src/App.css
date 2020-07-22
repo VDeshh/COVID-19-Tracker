@@ -11,6 +11,7 @@ body {
 }
 .app__header > h1 {
   color: #fc3c3c;
+
   font-size: 2rem;
   margin-left: 25%;
 }
@@ -55,4 +56,16 @@ body {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 5px;
+}
+
+.neon {
+  padding-top: 5%;
+  font-size: 4em;
+  font-weight: 450;
+  text-align: center;
+  color: black;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff,
+    0 0 40px rgb(0, 255, 234), 0 0 80px rgb(0, 255, 234),
+    0 0 90px rgb(0, 255, 234), 0 0 100px rgb(0, 255, 234),
+    0 0 150px rgb(0, 255, 234);
 }
