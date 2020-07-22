@@ -69,3 +69,27 @@ body {
     0 0 90px rgb(0, 255, 234), 0 0 100px rgb(0, 255, 234),
     0 0 150px rgb(0, 255, 234);
 }
+
+.total__casesBox {
+  justify-content: right;
+  align-items: right;
+  border: 5px solid red;
+  border-top: 10px solid red;
+}
+.total__casesBox__heading {
+  flex: 1;
+  color: black;
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  align-items: right;
+}
+
+.text_casebox {
+  color: #cc1034;
+  font-weight: 800;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  font-weight: bold;
+}

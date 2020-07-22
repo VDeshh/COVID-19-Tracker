@@ -5,6 +5,7 @@ import {
   Select,
   Card,
   CardContent,
+  Typography,
 } from "@material-ui/core";
 import "./App.css";
 import InfoBox from "./InfoBox";
@@ -24,11 +25,15 @@ function App() {
   const [mapZoom, setMapZoom] = useState(3);
   const [mapCountries, setMapCountries] = useState([]);
   const [casesType, setCasesType] = useState("cases");
+  const [totalCases, setTotalCases] = useState([]);
 
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
       .then((response) => response.json())
-      .then((data) => setCountryInfo(data));
+      .then((data) => {
+        setCountryInfo(data);
+        setTotalCases(data.cases);
+      });
   }, []);
 
   useEffect(() => {
@@ -81,6 +86,16 @@ function App() {
           <Typing>
             <h1 className="neon">COVID-19 Tracker</h1>
           </Typing>
+
+          <Card className="total__casesBox">
+            <CardContent className="total__casesBox__content">
+              <h3 className="total__casesBox__heading">
+                Total Confirmed Cases
+              </h3>
+              <Typography className="text_casebox">{totalCases}</Typography>
+            </CardContent>
+          </Card>
+
           <FormControl className="app__dropdown">
             <Select
               variant="outlined"
